@@ -1,0 +1,73 @@
+
+Overview
+The system is aa JWT accessible web service that requires a user to login to request any service. It was built using a MVC framework The three services implemented in the system are as follows:
+1.Service 1: Get All Books.
+•	User is not required to enter a parameter.
+•	Is available to all users with an api key
+2.Service 2: Get Books by Category
+•	User is required to enter a category the want to search books.
+•	Is only available to users who have a premium membership.
+3.Service 3: Get Books by Date
+•	User is required to enter two dates as a range of a release date.
+•	Is only available to users who have a premium membership.
+To demo the system, I have written 3 use cases that will utilize all required functionality. Prerequisites for the system are the database’s 
+•	Webservices_serverdb
+•	Webservices_clientdb
+Use Case1
+Login: 
+Username:  Bill
+Password: password
+Member: Not Defined.
+
+Process:
+Step 1:  Request Service 1,2 or 3.
+Step 2: Service is denied because user is not logged in.
+Step 3: Login as Bill.
+Step 4: Bill does not have an api key, he will there for be requested to get one.
+Step 5: Fill in bills credentials and request api key.
+Step 6: Bills JWT will be displayed and his information will be stored on the server’s database, his JWT will also be stored on the client database.
+Step 7: Click The logout button in the navigation bar
+
+Use Case2
+
+Login: 
+Username:  John
+Password: password
+Member: Free
+
+Process:
+Step 1:  Login as John.
+Step 2: Johns JWT will be displayed on the screen.
+Step 3: Click on request service 1.
+Step 4: Service 1 will be requested and will display all the books on the screen.
+Step 5: Click on request service 2 and enter category to search for.
+Step 6: Service 2 will be requested. Service will be denied and display error message.
+Step 7: Click on request service 3 and enter dates to search for.
+Step 8: Service 3 will be requested. Service will be denied and display error message.
+Step 9: Click The logout button in the navigation bar
+
+Use Case3
+
+Login: 
+Username: Sam
+Password: password
+Member: premium
+
+Process:
+Step 1:  Login as Sam.
+Step 2: Sam’s JWT will be displayed on the screen.
+Step 3: Click on request service 1.
+Step 4: Service 1 will be requested and will display all the books on the screen.
+Step 5: Click on request service 2 and enter category to search for.
+Step 6: Service 2 will be requested. Service will display all books matching entered category.
+Step 7: Click on request service 3 and enter dates to search for.
+Step 8: Service 3 will be requested. Service will display all books in between the two-date entered.
+Step 9: Click The logout button in the navigation bar
+
+
+
+
+
+
+
+
